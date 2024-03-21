@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install all dependencies re requirement file
-RUN pwd && pip install -r app/requirement.txt
+RUN ls -al
 
 # Run the application
 
