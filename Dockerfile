@@ -8,7 +8,8 @@ WORKDIR /app
 COPY . /app
 
 # Install all dependencies re requirement file
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install Flask
+
 
 # Run the application
 
