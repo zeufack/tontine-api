@@ -7,7 +7,7 @@ WORKDIR /app
 COPY requirements.txt /app
 
 # Install all dependencies re requirement file
-RUN pip3 install --upgrade pip3 && pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 
 # Copy all file from context to /app
