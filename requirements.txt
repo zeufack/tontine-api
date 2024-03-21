@@ -5,10 +5,12 @@ backcall==0.2.0
 beautifulsoup4==4.9.3
 black==23.7.0
 blinker==1.7.0
+Brlapi==0.8.2
 certifi==2020.6.20
 cffi==1.15.1
 chardet==4.0.0
 charset-normalizer==2.1.1
+chrome-gnome-shell==0.0.0
 click==8.1.6
 coloredlogs==15.0.1
 configobj==5.0.6

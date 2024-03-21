@@ -1,16 +1,22 @@
 # set base directory
-FROM python:3.9.19-slim
+FROM python:3.9.2
 
 # Set working directory in docker container
 WORKDIR /app
 
-# Copy all file from context to /app
-COPY . /app
+COPY requirements.txt /app
 
 # Install all dependencies re requirement file
-RUN pip install --upgrade pip && pip install Flask
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
+
+# Copy all file from context to /app
+COPY ./app /app
+
+# entry point
+
+ENTRYPOINT [ "flask" ]
 
 # Run the application
 
-CMD [ "flask", "--app", "./app/app", "run" ]
+CMD ["--app", "app", "run" ]
