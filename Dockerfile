@@ -8,8 +8,8 @@ WORKDIR /app
 COPY . /app
 
 # Install all dependencies re requirement file
-#RUN ls -al
+RUN pip install -r requirements.txt
 
 # Run the application
 
-CMD [ "ls", "-a" ]
+CMD [ "flask", "--app", "./app/app", "run" ]
