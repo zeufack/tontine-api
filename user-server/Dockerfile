@@ -1,5 +1,5 @@
 # set base directory
-FROM python:3.9.2
+FROM python:3.10-alpine
 
 # Set working directory in docker container
 WORKDIR /app
@@ -13,8 +13,10 @@ RUN pip3 install -r requirements.txt
 # Copy all file from context to /app
 COPY ./app /app
 
-# entry point
+# Document port
+EXPOSE 5000
 
+# entry point
 ENTRYPOINT [ "flask" ]
 
 # Run the application
