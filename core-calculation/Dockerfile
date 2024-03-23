@@ -1,4 +1,4 @@
-FROM golang:alpine3.19 As buildStage
+FROM golang:alpine3.19 As base
 
 COPY go.mod .
 
@@ -8,8 +8,8 @@ COPY . .
 
 RUN go build 
 
-FROM buildStage as runStage
+FROM base as build
 
-COPY --from=buildStage core-calculation .
+COPY --from=base core-calculation .
 
 ENTRYPOINT [ "./core-calculation" ]
